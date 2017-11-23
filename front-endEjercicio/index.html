@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario de Contacto</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"> </script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+       
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+
+	 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	 	<script src="controller.js"></script>
+	 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-controller = "primerControl as control">
+
+<nav>
+    <div class="nav-wrapper green">
+      <a href="#!" class="brand-logo">Sistema de Profesores</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="buscar.php"><i class="material-icons left">search</i>Buscar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+	<section class="container">
+		<div class="row">
+		<h3 class="center-align">PROFESOR</h3>
+			<article class="col s6 offset-s3">
+				<form method="POST" >
+					<div class="input-field">
+						<i class="material-icons prefix">perm_identity</i>
+						<label for="nombre">Nombre</label>
+						<input type="text" ng-model="newPost.nombre" name="name" id="name" required>
+					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">person_pin</i>
+						<label for="apellido">Apellido</label>
+						<input type="text" ng-model="newPost.apellido" name="apellido" id="apellido" required>
+					</div>
+					
+					<div class="input-field">
+						<i class="material-icons prefix">mood</i>
+						<label for="edad">Edad</label>
+						<input type="text" ng-model="newPost.edad" name="edad" id="edad" required>
+					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">assignment</i>
+						<label for="cursos">cursos</label>
+						<input type="text" ng-model="newPost.cursos" name="cursos" id="cursos" required>
+					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">info</i>
+						<label for="cursos">cuchilla?</label>
+						<br>
+
+					<form action="#">
+				    <p>
+				      <input type="checkbox" id="true" ng-model="newPost.cuchilla" />
+				      <label for="true">True</label>
+				    </p>
+					 <form action="#">
+					    <p>
+					      <input type="checkbox"  id="false" />
+					      <label for="false">False</label>
+					    </p>
+
+					  </div>
+					
+					<p class="center-align">
+						<button class="waves-effect waves-light btn" type="submit" id="Mpost" ng-click="addPost()" ><i class="material-icons right">send</i>enviar</button>
+					</p>
+
+				</form>
+
+			</article>
+		</div>
+		
+	</section>
+
+	<section>
+		<ul>
+			<li ng-repeat="post in control.posts">
+				<h2>{{post.nombre}}</h2>
+				<h2>{{post.apellido}}</h2>
+			</li>
+		</ul>
+	</section>
+
+
+	<footer class="page-footer green">
+    <div class="container">
+      <div class="row center-align">
+        <div class="col 10 s12">
+          <h5 class="white-text">Sistema de profesores</h5>
+          <p class="grey-text text-lighten-4">Creado por Yohan Lenin MESa</p>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+</body>
+</html>
